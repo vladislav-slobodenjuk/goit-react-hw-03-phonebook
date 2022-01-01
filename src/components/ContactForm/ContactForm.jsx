@@ -1,10 +1,16 @@
 import { Component } from 'react/cjs/react.production.min';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 
 import s from './ContactForm.module.scss';
 
 export default class Form extends Component {
+  static propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    onSubmit: PropTypes.func,
+  };
+
   state = {
     name: '',
     number: '',
@@ -59,21 +65,3 @@ export default class Form extends Component {
     );
   }
 }
-
-// Form.propTypes = {
-//   value: PropTypes.string,
-//   onChange: PropTypes.func,
-//   onSubmit: PropTypes.func,
-// };
-
-// ContactList.propTypes = {
-//   contacts: PropTypes.arrayOf(
-//     PropTypes.exact({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.number.isRequired,
-//     }),
-//   ),
-// };
-
-// Ваоидация от props не работает, только от contacts после деструктуризвции
