@@ -1,4 +1,4 @@
-import { Component } from 'react/cjs/react.production.min';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 
